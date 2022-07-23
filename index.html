@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js"></script>
+    <title>Calculator</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 id="heading">
+            <span id="head">CALCULATOR</span>
+        </h1>
+        <div>
+            <div class="blobs_1 blobbox"></div>
+            <div class="blobs_2 blobbox"></div>
+            <div class="blobs_3 blobbox"></div>
+            <div class="blobs_4 blobbox"></div>
+            <div class="blobs_5 blobbox"></div>
+            <div class="blobs_6 blobbox"></div>
+            <div class="blobs_7 blobbox"></div>
+        </div>
+    </div>
+
+    <div class="maindiv">
+        <input class="resultdata" type="text" name="result" id="result">
+        <div>
+            <form>
+                <div class="group">
+                    <input type="text" id="outputResult" value="0" class="resultshow" required="required" />
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Result</label>
+                </div>
+            </form>
+        </div>
+        <div class="container2">
+            <ul  class="wrapper" onclick="startCalc()">
+                <li class="icon facebook startbgcolor">
+                    <span class="tooltip" id="startonTooltip">On</span>
+                    <span id="starton">ON</span>
+                </li>
+            </ul>
+            <ul id="start" class="wrapper">
+                <li class="icon facebook startbgcolor">
+                    <span class="tooltip">Start</span>
+                    <span>C</span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook startbgcolor">
+                    <span class="tooltip">Backspace</span>
+                    <span class="backImg">
+                        <img src="./backspace.png" alt="backspace" width="30" height="33">
+                    </span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook symbolbgcolor">
+                    <span class="tooltip">Divide</span>
+                    <span>÷</span>
+                </li>
+            </ul>
+            
+            <ul  class="wrapper" onclick="seven()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Seven</span>
+                    <span>7</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="eight()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Eight</span>
+                    <span>8</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="nine()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Nine</span>
+                    <span>9</span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook symbolbgcolor">
+                    <span class="tooltip">Substract</span>
+                    <span>-</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="four()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Four</span>
+                    <span>4</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="five()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Five</span>
+                    <span>5</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="six()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Six</span>
+                    <span>6</span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook symbolbgcolor">
+                    <span class="tooltip">Addition</span>
+                    <span>+</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="one()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">One</span>
+                    <span>1</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="two()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Two</span>
+                    <span>2</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="three()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Three</span>
+                    <span>3</span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook symbolbgcolor">
+                    <span class="tooltip">Multiply</span>
+                    <span>×</span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook symbolbgcolor">
+                    <span class="tooltip">Parenthesis</span>
+                    <span>(</span>
+                </li>
+            </ul>
+            <ul  class="wrapper" onclick="zero()">
+                <li class="icon facebook digitbgcolor">
+                    <span class="tooltip">Zero</span>
+                    <span>0</span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook symbolbgcolor">
+                    <span class="tooltip">Parenthesis</span>
+                    <span>)</span>
+                </li>
+            </ul>
+            <ul  class="wrapper">
+                <li class="icon facebook equalbgcolor">
+                    <span class="tooltip">Equals</span>
+                    <span>=</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- <div >
+        <form>
+            <div class="group">
+                <input type="text" required="required" />
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Name</label>
+            </div>
+        </form>
+    </div> -->
+    <!-- This is not part of Pen -->
+    <!-- class="d-flex justify-content-center align-middle " -->
+    <!-- <a class="me" href="https://github.com/Pankajkumar90" target="_blank" style="color:#000"></a> -->
+</body>
+
+</html>
