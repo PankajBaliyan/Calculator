@@ -1,6 +1,8 @@
 TASKS TO DO 👇
 1. make result input unselectable (class already written in style.css)
 2. set result input to only input selected digits, not english alphabets.
+3. double press of "C" button input "clear" in input box. and then press "=" generate a error in console
+4. test with inputing multiple symbols at once & watch the calculations.
 
 
 /* .unselectable {
