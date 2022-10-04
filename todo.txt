@@ -1,9 +1,11 @@
 TASKS TO DO 👇
 1. make result input unselectable (class already written in style.css)
 2. set result input to only input selected digits, not english alphabets.
-3. double press of "C" button input "clear" in input box. and then press "=" generate a error in console
 4. test with inputing multiple symbols at once & watch the calculations.
-
+5. input box did'nt get focus if calculator is off.
+6. if you enter a long number in result input field then it hide in left side, but fix it & hide in right side.
+7. add . (dot) to buttons.
+8. add keyboard button press key features.
 
 /* .unselectable {
     -webkit-touch-callout: none;

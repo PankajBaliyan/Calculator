@@ -37,7 +37,7 @@
         <div>
             <form>
                 <div class="group">
-                    <input type="text" id="outputResult" style="text-align: right;" required="required" />
+                    <input type="text" id="outputResult" style="text-align: right;" onClick="this.select();" required="required" />
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Result</label>
@@ -58,7 +58,7 @@
                 </li>
             </ul>
             <ul class="wrapper">
-                <li class="icon facebook startbgcolor" onclick="notification('Backspace','warning')">
+                <li class="icon facebook startbgcolor" onclick="notification('Backspace','warning','B','backSpace')">
                     <span class="tooltip unselectable">Backspace</span>
                     <span class="backImg unselectable">
                         <img src="./Images/backspace.png" alt="backspace" width="30" height="33">
