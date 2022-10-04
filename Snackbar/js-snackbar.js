@@ -1,15 +1,15 @@
 function SnackBar(userOptions) {
-    var _This = this;
+    let _This = this;
 
-    var _Interval;
+    let _Interval;
 
-    var _Element;
+    let _Element;
 
-    var _Container;
+    let _Container;
 
-    var _Message;
+    let _Message;
 
-    var _MessageWrapper;
+    let _MessageWrapper;
 
     function _create() {
         _applyUserOptions();
@@ -46,7 +46,7 @@ function SnackBar(userOptions) {
     }
 
     function _setContainer() {
-        var target = getOrFindContainer();
+        let target = getOrFindContainer();
 
         if (target === undefined) {
             console.warn(
@@ -58,11 +58,11 @@ function SnackBar(userOptions) {
         _Container = getOrAddContainerIn(target);
 
         function getOrAddContainerIn(target) {
-            var node;
+            let node;
 
-            var positionClass = _getPositionClass();
+            let positionClass = _getPositionClass();
 
-            for (var i = 0; i < target.children.length; i++) {
+            for (let i = 0; i < target.children.length; i++) {
                 node = target.children.item(i);
 
                 if (
@@ -79,7 +79,7 @@ function SnackBar(userOptions) {
         }
 
         function createNewContainer(target) {
-            var container = document.createElement("div");
+            let container = document.createElement("div");
             container.classList.add("js-snackbar-container");
 
             if (_Options.fixed) {
@@ -100,7 +100,7 @@ function SnackBar(userOptions) {
     function _applyPositionClasses() {
         _Container.classList.add(_getPositionClass());
 
-        var fixedClassName = "js-snackbar-container--fixed";
+        let fixedClassName = "js-snackbar-container--fixed";
 
         if (_Options.fixed) {
             _Container.classList.add(fixedClassName);
@@ -110,13 +110,13 @@ function SnackBar(userOptions) {
     }
 
     function _createMessage() {
-        var outerElement = createWrapper();
-        var innerSnack = createInnerSnackbar();
+        let outerElement = createWrapper();
+        let innerSnack = createInnerSnackbar();
         outerElement.appendChild(innerSnack);
         return outerElement;
 
         function createWrapper() {
-            var outerElement = document.createElement("div");
+            let outerElement = document.createElement("div");
             outerElement.classList.add("js-snackbar__wrapper");
             outerElement.style.height = "0px";
             outerElement.style.opacity = "0";
@@ -128,7 +128,7 @@ function SnackBar(userOptions) {
         }
 
         function createInnerSnackbar() {
-            var innerSnack = document.createElement("div");
+            let innerSnack = document.createElement("div");
             innerSnack.classList.add("js-snackbar", "js-snackbar--show");
             applyColorAndIconTo(innerSnack);
             insertMessageTo(innerSnack);
@@ -139,7 +139,7 @@ function SnackBar(userOptions) {
 
         function applyColorAndIconTo(element) {
             if (!_Options.status) return;
-            var status = document.createElement("span");
+            let status = document.createElement("span");
             status.classList.add("js-snackbar__status");
             applyColorTo(status);
             applyIconTo(status);
@@ -172,7 +172,7 @@ function SnackBar(userOptions) {
 
             function applyIconTo(element) {
                 if (!_Options.icon) return;
-                var icon = document.createElement("span");
+                let icon = document.createElement("span");
                 icon.classList.add("js-snackbar__icon");
 
                 switch (_Options.icon) {
@@ -227,12 +227,12 @@ function SnackBar(userOptions) {
                 return;
             }
 
-            for (var i = 0; i < _Options.actions.length; i++) {
+            for (let i = 0; i < _Options.actions.length; i++) {
                 addAction(element, _Options.actions[i]);
             }
 
             function addAction(element, action) {
-                var button = document.createElement("span");
+                let button = document.createElement("span");
                 button.classList.add("js-snackbar__action");
                 button.textContent = action.text;
 
@@ -259,7 +259,7 @@ function SnackBar(userOptions) {
                 return;
             }
 
-            var closeButton = document.createElement("span");
+            let closeButton = document.createElement("span");
             closeButton.classList.add("js-snackbar__close");
             closeButton.innerText = "\u00D7";
             closeButton.onclick = _This.Close;
@@ -311,7 +311,7 @@ function SnackBar(userOptions) {
     }
 
     this.Open = function () {
-        var contentHeight = getMessageHeight();
+        let contentHeight = getMessageHeight();
         _Element.style.height = contentHeight + "px";
         _Element.style.opacity = 1;
         _Element.style.marginTop = "5px";
@@ -335,9 +335,9 @@ function SnackBar(userOptions) {
 
     this.Close = function () {
         if (_Interval) clearInterval(_Interval);
-        var snackbarHeight = _Element.scrollHeight; // get the auto height as a px value
+        let snackbarHeight = _Element.scrollHeight; // get the auto height as a px value
 
-        var snackbarTransitions = _Element.style.transition;
+        let snackbarTransitions = _Element.style.transition;
         _Element.style.transition = "";
         requestAnimationFrame(function () {
             _Element.style.height = snackbarHeight + "px"; // set the auto height to the px height

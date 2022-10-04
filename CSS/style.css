@@ -299,27 +299,32 @@ body {
 }
 
 /* placeholder for last result input box  */
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #fff;
     text-align: center;
     text-transform: capitalize;
     font-size: 1rem;
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
     color: #fff;
     text-align: center;
     text-transform: capitalize;
     font-size: 1rem;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+    /* Microsoft Edge */
     color: #fff;
     text-align: center;
     text-transform: capitalize;
     font-size: 1rem;
-  }
+}
+
 /* end here  */
 
 .maindiv {
@@ -337,15 +342,23 @@ body {
     box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
 }
 
+.previous_result {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
 .resultdata {
     border-radius: 5px;
     padding: 3px;
     font-size: 19px;
+    width: 200px;
+    overflow: hidden;
 }
 
 form {
     width: 320px;
-    margin: 45px auto;
+    margin: 28px auto;
 }
 
 .group {
@@ -534,6 +547,7 @@ label {
     -webkit-animation: me 2s linear infinite alternate both;
     animation: me 2s linear infinite alternate both;
 }
+
 .unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
