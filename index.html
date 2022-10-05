@@ -37,7 +37,7 @@
         <div>
             <form>
                 <div class="group">
-                    <input type="text" id="outputResult" style="text-align: right;" onClick="this.select();" required="required" />
+                    <input type="text" id="outputResult" style="text-align: right;" onClick="this.select();" onkeypress="return onlyNumberKey(event)" required="required" autocomplete="off"/>
                     <span class="highlight"></span>
                     <span class="bar"></span>
                     <label>Result</label>
@@ -145,9 +145,9 @@
                 </li>
             </ul>
             <ul class="wrapper">
-                <li class="icon facebook symbolbgcolor" onclick="notification('Open Parenthesis','None','#','(')">
-                    <span class="tooltip unselectable">Parenthesis</span>
-                    <span class="unselectable">(</span>
+                <li class="icon facebook digitbgcolor" onclick="notification('Dot','None','#','.')">
+                    <span class="tooltip unselectable">Dot</span>
+                    <span class="unselectable">.</span>
                 </li>
             </ul>
             <ul class="wrapper">
@@ -157,9 +157,9 @@
                 </li>
             </ul>
             <ul class="wrapper">
-                <li class="icon facebook symbolbgcolor" onclick="notification('Close Parenthesis','None','#',')')">
-                    <span class="tooltip unselectable">Parenthesis</span>
-                    <span class="unselectable">)</span>
+                <li class="icon facebook symbolbgcolor" onclick="notification('Percentage','None','#','%')">
+                    <span class="tooltip unselectable">Percentage</span>
+                    <span class="unselectable">%</span>
                 </li>
             </ul>
             <ul class="wrapper">
