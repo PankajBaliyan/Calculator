@@ -5,6 +5,7 @@ TASKS TO DO 👇
 7. add . (dot) to buttons.
 8. add keyboard button press key features.
 9. ad . & % in place of ( ) watch the calculations.
+10. testing
 
 /* .unselectable {
     -webkit-touch-callout: none;
