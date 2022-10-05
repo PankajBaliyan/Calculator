@@ -33,6 +33,15 @@ outputResult.addEventListener("click", function () {
     }
 });
 
+// get notification according to keypress
+onkeydown = function (e) {
+    if (calculatorStatus == 1) {
+        notificationHere("Click on input field", "red", "question");
+    } else {
+        notificationHere("Turn On your Calc", "red", "question");
+    }
+};
+
 // set custom input for input field
 var onlyNumberKey = function (ev) {
     var key;
@@ -67,6 +76,7 @@ var onlyNumberKey = function (ev) {
 };
 // end here
 
+// function to set data in notification function
 function notification(
     msgHere,
     notificationStatus,
@@ -111,7 +121,6 @@ function enterNumber(inputNumber) {
         }
         resultStatus = 0;
     } else if (inputNumber == "clear") {
-        // used to clear the screen
         outputResult.value = 0;
         resultStatus = 0;
     } else if (inputNumber == "backSpace") {

@@ -1,16 +1,8 @@
 TASKS TO DO 👇
-1. make result input unselectable (class already written in style.css)
+
 4. test with inputing multiple symbols at once & watch the calculations.
-6. if you enter a long number in result input field then it hide in left side, but fix it & hide in right side.
+5. it did'nt store value in float
+6. multiple press of == generate error
 7. add . (dot) to buttons.
 8. add keyboard button press key features.
 9. ad . & % in place of ( ) watch the calculations.
-
-/* .unselectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-} */
