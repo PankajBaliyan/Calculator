@@ -43,9 +43,9 @@ onkeydown = function (e) {
 };
 
 // set custom input for input field
-var onlyNumberKey = function (ev) {
-    var key;
-    var isShift;
+let onlyNumberKey = function (ev) {
+    let key;
+    let isShift;
     if (window.event) {
         key = window.event.keyCode;
         isShift = !!window.event.shiftKey; // typecast to boolean
@@ -54,20 +54,7 @@ var onlyNumberKey = function (ev) {
         isShift = !!ev.shiftKey;
     }
     if (isShift) {
-        switch (key) {
-            case 43:
-                return true;
-                break;
-            case 42:
-                return true;
-                break;
-            case 37:
-                return true;
-                break;
-            default:
-                return false;
-                break;
-        }
+        return !!(key == 43 || key == 42 || key == 37);
     } else if(key == 45 || key == 46 || key == 47 || key >= 48 && key <= 57) {
         return true;
     } else {
@@ -96,7 +83,7 @@ function notification(
 
 // toast Notification here
 function notificationHere(msgHere, notificationStatus, notificationIcon) {
-    let message = SnackBar({
+    SnackBar({
         message: msgHere,
         speed: "0.2s",
         status: notificationStatus,
@@ -112,7 +99,7 @@ function enterNumber(inputNumber) {
     let finalData = currentData.concat(addData);
 
     if (previousData == 0) {
-        if (inputNumber == "backSpace") {
+        if (inputNumber == "backSpace" || inputNumber == "=") {
             outputResult.value = 0;
         } else if (inputNumber == "clear") {
             outputResult.value = 0;
@@ -134,7 +121,13 @@ function enterNumber(inputNumber) {
             outputResult.value = 0;
         }
     } else if (inputNumber == "=") {
-        calculation(finalData);
+        if(inputNumber != currentData.charAt(currentData.length-1)) {
+            calculation(finalData);
+        }
+    } else if (inputNumber == "+" || inputNumber == "-" || inputNumber == "*" || inputNumber == "/" || inputNumber == "%" || inputNumber == ".") {
+        if(inputNumber != currentData.charAt(currentData.length-1)) {
+            outputResult.value = finalData;
+        }
     } else {
         resultStatus = 0;
         outputResult.value = finalData;
@@ -145,6 +138,37 @@ function enterNumber(inputNumber) {
 function calculation(inputData) {
     let str = inputData.slice(0, -1); //remove last digit(=) from outputResult.value
     let setData = eval(str); //perform javascript operations on string values
+
+    //remove the digits from . after two digits
+    // let text = setData.toString();
+    // if(text.indexOf(".")){
+    //     console.log("before edit",text)
+        
+        // indexOf of first . digit
+        // let result = text.indexOf(".");
+        // console.log("Index of . ",result)
+        
+        // calculate extra digits
+        // let extra = text.length-result-1;
+        // console.log("after . characters",extra);
+        
+        // removing the digits
+        // if((text.length-result-1) > 2)
+        // {
+        //     let text1 =  text.slice(0,-(text.length-result-3))
+        //     console.log("after edit",text1)
+        // }
+        
+        // remove the digits by looping
+        // for(let i = result+3; i< text.length; i++){
+        //     console.log("here",text[i]);
+        //     if(text[i] < 5) {
+        //         let text =  text.slice(0,-(text.length-result-3))
+        //         console.log("text",text);
+        //     }
+        // }
+    // }
+
     outputResult.value = setData;
     result.value = setData;
     resultStatus = 1;
