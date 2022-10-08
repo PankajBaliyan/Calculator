@@ -140,34 +140,29 @@ function calculation(inputData) {
     let setData = eval(str); //perform javascript operations on string values
 
     //remove the digits from . after two digits
-    // let text = setData.toString();
-    // if(text.indexOf(".")){
-    //     console.log("before edit",text)
+    let text = setData.toString();
+    if(text.indexOf(".")){
         
-        // indexOf of first . digit
-        // let result = text.indexOf(".");
-        // console.log("Index of . ",result)
-        
-        // calculate extra digits
-        // let extra = text.length-result-1;
-        // console.log("after . characters",extra);
-        
-        // removing the digits
-        // if((text.length-result-1) > 2)
-        // {
-        //     let text1 =  text.slice(0,-(text.length-result-3))
-        //     console.log("after edit",text1)
-        // }
-        
-        // remove the digits by looping
-        // for(let i = result+3; i< text.length; i++){
-        //     console.log("here",text[i]);
-        //     if(text[i] < 5) {
-        //         let text =  text.slice(0,-(text.length-result-3))
-        //         console.log("text",text);
-        //     }
-        // }
-    // }
+      let indexOfDot = text.indexOf("."); // indexOf of first . decimal digit
+      let totalDigitAfterDot = text.length-indexOfDot-1; // calculate total digits after decimal
+      let checkValueIndex = indexOfDot + 3; // check indexing for remove further digits
+      if(totalDigitAfterDot > 3) {
+        if(text[checkValueIndex] > 5) {
+          // remove the digits by looping & loops run from 4th index
+            for(let i = 4; i< text.length; i++){
+              if(text[i] < 5) 
+              {
+                setData =  text.slice(0,indexOfDot+i-1)
+                break;
+              }
+            }
+        } else {
+          // removing the digits if 3rd digit after decimal is less than 5
+            setData =  text.slice(0,-Math.abs(totalDigitAfterDot - 2));
+        }
+      }
+ 
+    }
 
     outputResult.value = setData;
     result.value = setData;
