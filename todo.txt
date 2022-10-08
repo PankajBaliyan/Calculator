@@ -8,7 +8,5 @@ TASKS TO DO 👇
 12. paste this "1.1+2+1.2" & click on "=" button.
 13. convert the last result option to show calculated result data.
 14. give tips or tricks on time to time.
-- 1.1+2.1+3.1 run in console & other calculator
-- working on removing last digits from 2 digit after . find.
 - work on responsitivity
 - check on 1920*1080 screens size
