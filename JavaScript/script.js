@@ -136,35 +136,45 @@ function enterNumber(inputNumber) {
 
 //make calculation function
 function calculation(inputData) {
+    let currentData = outputResult.value.toString();
     let str = inputData.slice(0, -1); //remove last digit(=) from outputResult.value
-    let setData = eval(str); //perform javascript operations on string values
 
-    //remove the digits from . after two digits
-    let text = setData.toString();
-    if(text.indexOf(".")){
-        
-      let indexOfDot = text.indexOf("."); // indexOf of first . decimal digit
-      let totalDigitAfterDot = text.length-indexOfDot-1; // calculate total digits after decimal
-      let checkValueIndex = indexOfDot + 3; // check indexing for remove further digits
-      if(totalDigitAfterDot > 3) {
-        if(text[checkValueIndex] > 5) {
-          // remove the digits by looping & loops run from 4th index
-            for(let i = 4; i< text.length; i++){
-              if(text[i] < 5) 
-              {
-                setData =  text.slice(0,indexOfDot+i-1)
-                break;
-              }
-            }
-        } else {
-          // removing the digits if 3rd digit after decimal is less than 5
-            setData =  text.slice(0,-Math.abs(totalDigitAfterDot - 2));
-        }
-      }
- 
+    // checking for last digit is symbol or not, until all symbols are not removed this loop will run
+    let checkingSymbolAtLast = str.charAt(str.length - 1);
+    while (checkingSymbolAtLast == '+' || checkingSymbolAtLast == '-' || checkingSymbolAtLast == '*' || checkingSymbolAtLast == '/' || checkingSymbolAtLast == '%' || checkingSymbolAtLast == '.') {
+        str = str.slice(0, -1)
+        checkingSymbolAtLast = str.charAt(str.length - 1);
     }
+    if (currentData == '+' || currentData == '-' || currentData == '*' || currentData == '/' || currentData == '%' || currentData == '.') {
+        outputResult.value = 0;
+    } else {
+        let setData = eval(str); //perform javascript operations on string values
 
-    outputResult.value = setData;
-    result.value = setData;
+        //remove the digits from . after two digits
+        let text = setData.toString();
+        if (text.indexOf(".")) {
+
+            let indexOfDot = text.indexOf("."); // indexOf of first . decimal digit
+            let totalDigitAfterDot = text.length - indexOfDot - 1; // calculate total digits after decimal
+            let checkValueIndex = indexOfDot + 3; // check indexing for remove further digits
+            if (totalDigitAfterDot > 3) {
+                if (text[checkValueIndex] > 5) {
+                    // remove the digits by looping & loops run from 4th index
+                    for (let i = 4; i < text.length; i++) {
+                        if (text[i] < 5) {
+                            setData = text.slice(0, indexOfDot + i - 1)
+                            break;
+                        }
+                    }
+                } else {
+                    // removing the digits if 3rd digit after decimal is less than 5
+                    setData = text.slice(0, -Math.abs(totalDigitAfterDot - 2));
+                }
+            }
+        }
+
+        outputResult.value = setData;
+        result.value = setData;
+    }
     resultStatus = 1;
 }
