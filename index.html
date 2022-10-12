@@ -31,16 +31,14 @@
     <!-- main calculator  -->
     <div class="maindiv">
         <div class="previous_result">
-            <span style="color:#00ffb2;">Last Result &nbsp; 👉 </span>
+            <span>Last Result &nbsp; 👉 </span>
             <input class="resultdata" type="text" name="result" id="result" placeholder="No record found" disabled>
         </div>
         <div>
             <form>
                 <div class="group">
-                    <input type="text" id="outputResult" style="text-align: right;" onClick="this.select();" onkeypress="return onlyNumberKey(event)" required="required" autocomplete="off"/>
-                    <span class="highlight"></span>
-                    <span class="bar"></span>
-                    <label>Result</label>
+                    <span>Calculations 👇</span>
+                    <input type="text" id="outputResult" style="text-align: right;" disabled />
                 </div>
             </form>
         </div>

@@ -6,6 +6,10 @@ let result = document.getElementById("result"); //last result data show here
 let resultStatus = 0;
 let calculatorStatus = 0;
 
+window.onload = () => {
+    notificationHere("Welcome to Calculator", "success", "check");
+}
+
 //function to on / off calculator
 function startCalc() {
     if (startButton.innerHTML == "ON") {
@@ -36,32 +40,98 @@ outputResult.addEventListener("click", function () {
 // get notification according to keypress
 onkeydown = function (e) {
     if (calculatorStatus == 1) {
-        notificationHere("Click on input field", "red", "question");
+        // Make Calculator perform operation on keypress
+        switch (e.keyCode) {
+            case 97:
+                notification('One', 'None', '#', 1);
+                break;
+            case 98:
+                notification('Two', 'None', '#', 2);
+                break;
+            case 99:
+                notification('Three', 'None', '#', 3);
+                break;
+            case 100:
+                notification('Four', 'None', '#', 4);
+                break;
+            case 101:
+                notification('Five', 'None', '#', 5);
+                break;
+            case 102:
+                notification('Six', 'None', '#', 6);
+                break;
+            case 103:
+                notification('Seven', 'None', '#', 7);
+                break;
+            case 104:
+                notification('Eight', 'None', '#', 8);
+                break;
+            case 105:
+                notification('Nine', 'None', '#', 9);
+                break;
+            case 96:
+                notification('Zero', 'None', '#', 0);
+                break;
+            case 107:
+                notification('Plus', 'None', '#', '+');
+                break;
+            case 109:
+                notification('Minus', 'None', '#', '-');
+                break;
+            case 106:
+                notification('Multiply', 'None', '#', '*');
+                break;
+            case 111:
+                notification('Divide', 'None', '#', '/');
+                break;
+            case 110:
+                notification('Dot', 'None', '#', '.');
+                break;
+            case 189:
+                notification('Minus', 'None', '#', '-');
+                break;
+            case 187:
+                notification('=', 'warning', '#', '=')
+                break;
+            case 13:
+                notification('=', 'warning', '#', '=')
+                break;
+            case 8:
+                notification('Backspace', 'warning', 'B', 'backSpace')
+                break;
+            case 46:
+                notification('Clear', 'info', 'X', 'clear')
+                break;
+            default:
+                notificationHere("Invalid Key Pressed", "red", "question");
+                break;
+        }
+
+        let isShift;
+        if (window.event) {
+            isShift = !!window.event.shiftKey; // typecast to boolean
+        } else {
+            isShift = !!ev.shiftKey;
+        }
+        if (isShift) {
+            if (e.keyCode == 53) {
+                notification('Percentage', 'None', '#', '%');
+            } else if (e.keyCode == 56) {
+                notification('Multiply', 'None', '#', '*');
+            } else if (e.keyCode == 187) {
+                notification('Plus', 'None', '#', '+');
+            } else {
+                notificationHere("Invalid Key Pressed", "red", "question");
+            }
+        }
+
     } else {
         notificationHere("Turn On your Calc", "red", "question");
     }
 };
 
-// set custom input for input field
-let onlyNumberKey = function (ev) {
-    let key;
-    let isShift;
-    if (window.event) {
-        key = window.event.keyCode;
-        isShift = !!window.event.shiftKey; // typecast to boolean
-    } else {
-        key = ev.which;
-        isShift = !!ev.shiftKey;
-    }
-    if (isShift) {
-        return !!(key == 43 || key == 42 || key == 37);
-    } else if(key == 45 || key == 46 || key == 47 || key >= 48 && key <= 57) {
-        return true;
-    } else {
-        return false;
-    }
-};
-// end here
+
+
 
 // function to set data in notification function
 function notification(
@@ -77,7 +147,16 @@ function notification(
         if (resultStatus == 1) {
             outputResult.value = 0;
         }
-        enterNumber(inputNumber);
+
+        let previousData = outputResult.value;
+        let currentData = previousData.toString();
+        if (inputNumber == "+" || inputNumber == "-" || inputNumber == "*" || inputNumber == "/" || inputNumber == "%") {
+            let lastDigit = currentData.charAt(currentData.length - 1);
+            if (lastDigit == "+" || lastDigit == "-" || lastDigit == "*" || lastDigit == "/" || lastDigit == "%") {
+                currentData = currentData.slice(0, -1);
+            }
+        }
+        enterNumber(inputNumber, currentData);
     }
 }
 
@@ -92,9 +171,11 @@ function notificationHere(msgHere, notificationStatus, notificationIcon) {
 }
 
 // entering digits in inputBox here
-function enterNumber(inputNumber) {
+function enterNumber(inputNumber, currentData) {
     let previousData = outputResult.value;
-    let currentData = previousData.toString();
+    if (currentData == undefined || currentData == null || currentData == "") {
+        currentData = previousData.toString();
+    }
     let addData = inputNumber.toString();
     let finalData = currentData.concat(addData);
 
@@ -121,11 +202,11 @@ function enterNumber(inputNumber) {
             outputResult.value = 0;
         }
     } else if (inputNumber == "=") {
-        if(inputNumber != currentData.charAt(currentData.length-1)) {
+        if (inputNumber != currentData.charAt(currentData.length - 1)) {
             calculation(finalData);
         }
     } else if (inputNumber == "+" || inputNumber == "-" || inputNumber == "*" || inputNumber == "/" || inputNumber == "%" || inputNumber == ".") {
-        if(inputNumber != currentData.charAt(currentData.length-1)) {
+        if (inputNumber != currentData.charAt(currentData.length - 1)) {
             outputResult.value = finalData;
         }
     } else {
@@ -145,6 +226,7 @@ function calculation(inputData) {
         str = str.slice(0, -1)
         checkingSymbolAtLast = str.charAt(str.length - 1);
     }
+    // if there is only symbol in input field then this condition will run
     if (currentData == '+' || currentData == '-' || currentData == '*' || currentData == '/' || currentData == '%' || currentData == '.') {
         outputResult.value = 0;
     } else {

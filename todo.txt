@@ -1,12 +1,4 @@
 TASKS TO DO 👇
 
-5. it did'nt store value in float
-8. add keyboard button press key features.
-9. ad . & % in place of ( ) watch the calculations.
-10. swap both result inputs.
-11. make a auto calculations function which calculate the result on keypress/enter.
-12. paste this "1.1+2+1.2" & click on "=" button.
-13. convert the last result option to show calculated result data.
-14. give tips or tricks on time to time.
-- work on responsitivity
-- check on 1920*1080 screens size
+12. paste this "1.1+2+1.2" & click on "=" button. 2344%23334.4 do this manually
+- work on responsive
