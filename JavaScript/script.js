@@ -26,14 +26,14 @@ function revertImage() {
 //function to on / off calculator
 function startCalc() {
     if (startButton.innerHTML == "ON") {
-        startButton.innerHTML = "OFF"; //change btn txt
-        startonTooltip.innerHTML = "Off"; //change btn tooltip
+        startButton.innerHTML = "OFF";
+        startonTooltip.innerHTML = "Off";
         outputResult.value = 0; //set value in result
         notificationHere("Now Calculator is ON", "success");
         calculatorStatus = 1;
     } else {
-        startButton.innerHTML = "ON"; //change btn txt
-        startonTooltip.innerHTML = "On"; //change btn tooltip
+        startButton.innerHTML = "ON";
+        startonTooltip.innerHTML = "On";
         outputResult.value = ""; //remove value in result
         notificationHere("Now Calculator is OFF", "danger");
         calculatorStatus = 0;
@@ -183,7 +183,7 @@ function notificationHere(msgHere, notificationStatus, notificationIcon) {
     });
 }
 
-// entering digits in inputBox here
+// function that manage data inside inputBox
 function enterNumber(inputNumber, currentData) {
     let previousData = outputResult.value;
     if (currentData == undefined || currentData == null || currentData == "") {
