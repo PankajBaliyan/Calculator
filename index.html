@@ -56,10 +56,10 @@
                 </li>
             </ul>
             <ul class="wrapper">
-                <li class="icon facebook startbgcolor" onclick="notification('Backspace','warning','B','backSpace')">
+                <li class="icon facebook startbgcolor" onclick="notification('Backspace','warning','B','backSpace')" onmouseenter="changeImage()" onmouseleave="revertImage()">
                     <span class="tooltip unselectable">Backspace</span>
                     <span class="backImg unselectable">
-                        <img src="./Images/backspace.png" alt="backspace" width="30" height="33">
+                        <img src="./Images/backspace.png" id="backSpacePNG" alt="backspace" width="30" height="33">
                     </span>
                 </li>
             </ul>
