@@ -6,6 +6,8 @@ let result = document.getElementById("result"); //last result data show here
 let backSpacePNG = document.getElementById("backSpacePNG"); //backspace img
 let resultStatus = 0;
 let calculatorStatus = 0;
+let notificationPosition;
+
 
 window.onload = () => {
     notificationHere("Welcome to Calculator", "success", "check");
@@ -37,16 +39,6 @@ function startCalc() {
         calculatorStatus = 0;
     }
 }
-
-// for disable click behavior on input field before the calculator is on
-outputResult.addEventListener("click", function () {
-    if (calculatorStatus == 1) {
-        outputResult.focus();
-    } else {
-        outputResult.blur();
-        notificationHere("Turn On your Calc", "red", "question");
-    }
-});
 
 // get notification according to keypress
 onkeydown = function (e) {
@@ -141,9 +133,6 @@ onkeydown = function (e) {
     }
 };
 
-
-
-
 // function to set data in notification function
 function notification(
     msgHere,
@@ -164,16 +153,29 @@ function notification(
         if (inputNumber == "+" || inputNumber == "-" || inputNumber == "*" || inputNumber == "/" || inputNumber == "%") {
             let lastDigit = currentData.charAt(currentData.length - 1);
             if (lastDigit == "+" || lastDigit == "-" || lastDigit == "*" || lastDigit == "/" || lastDigit == "%") {
-                currentData = currentData.slice(0, -1);
+                currentData = currentData.slice(0, -1); // remove last digit if it is symbol, to resolve the conflict of multiple symbols
             }
         }
         enterNumber(inputNumber, currentData);
     }
 }
 
+// function to set notification position according to screen size
+function notificationPos() {
+    let windowInnerWidth = window.innerWidth;
+    if (windowInnerWidth < 954) {
+        notificationPosition = "tr";
+    } else {
+        notificationPosition = "br";
+    }
+}
+
 // toast Notification here
 function notificationHere(msgHere, notificationStatus, notificationIcon) {
+    notificationPos()
     SnackBar({
+        timeout: 1000, // ms
+        position: notificationPosition,
         message: msgHere,
         speed: "0.2s",
         status: notificationStatus,
