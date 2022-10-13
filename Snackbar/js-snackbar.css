@@ -103,28 +103,28 @@
     background-color: transparent;
 }
 
- .js-snackbar__status.js-snackbar--success,
- .js-snackbar__status.js-snackbar--warning,
- .js-snackbar__status.js-snackbar--danger,
- .js-snackbar__status.js-snackbar--info {
+.js-snackbar__status.js-snackbar--success,
+.js-snackbar__status.js-snackbar--warning,
+.js-snackbar__status.js-snackbar--danger,
+.js-snackbar__status.js-snackbar--info {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.js-snackbar__status.js-snackbar--success  {
+.js-snackbar__status.js-snackbar--success {
     background-color: #4caf50;
 }
 
-.js-snackbar__status.js-snackbar--warning  {
+.js-snackbar__status.js-snackbar--warning {
     background-color: #ff9800;
 }
 
- .js-snackbar__status.js-snackbar--danger {
+.js-snackbar__status.js-snackbar--danger {
     background-color: #b90909;
 }
 
- .js-snackbar__status.js-snackbar--info {
+.js-snackbar__status.js-snackbar--info {
     background-color: #2196f3;
 }
 
