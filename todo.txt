@@ -1,4 +1,4 @@
 TASKS TO DO 👇
 
 2344%23334.4 do this manually
-- work on responsive
+improve code
