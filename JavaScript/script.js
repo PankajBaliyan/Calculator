@@ -3,11 +3,22 @@ let startonTooltip = document.getElementById("startonTooltip"); // on btn toolti
 let startButton = document.getElementById("starton"); //on btn txt
 let outputResult = document.getElementById("outputResult"); //result data show here
 let result = document.getElementById("result"); //last result data show here
+let backSpacePNG = document.getElementById("backSpacePNG"); //backspace img
 let resultStatus = 0;
 let calculatorStatus = 0;
 
 window.onload = () => {
     notificationHere("Welcome to Calculator", "success", "check");
+}
+
+// function to change backspace image on mouseenter
+function changeImage() {
+    backSpacePNG.src = "images/backspaceWhite.png";
+}
+
+// function to change backspace image on mouseleave
+function revertImage() {
+    backSpacePNG.src = "images/backspace.png";
 }
 
 //function to on / off calculator

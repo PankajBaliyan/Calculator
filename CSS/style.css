@@ -353,7 +353,7 @@ body {
 .previous_result {
     display: flex;
     justify-content: space-around;
-    margin-top: 15px;
+    margin-top: 8px;
 }
 
 .resultdata {
