@@ -1,7 +1,9 @@
 # Calculator
 
 ## [Watch it on youtube](https://www.youtube.com/c/CodeWithPankaj1)
-## [Live Preview of Project](https://pankajkumar90.github.io/Calculator/)
+
+## [Live Preview of Project](https://pankajbaliyan.github.io/Calculator/)
+
 ### The description of a Calculator Project
 
 - Both the keyboard and buttons can be used to access the calculator..
@@ -12,4 +14,4 @@
 
 💙 Join the channel to see more videos like this. [Code_With_Pankaj](https://www.youtube.com/c/CodeWithPankaj1)
 
-![preview img](/preview.png) 
+![preview img](/preview.png)

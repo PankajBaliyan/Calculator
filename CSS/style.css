@@ -15,28 +15,26 @@
 
 html,
 body {
-    display: grid;
     width: 100%;
+    height: 100vh;
     font-family: "Poppins", sans-serif;
     place-items: center;
-    background: linear-gradient(320deg, #f27121, #e94057, #8a2387);
+    background: rgb(65, 65, 233);
     text-align: center;
-    display: flex;
-    justify-content: center;
-    height: 125vh;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .container {
     display: block;
-    position: absolute;
     width: 80%;
     max-width: 1000px;
     height: 158px;
     top: 13%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 #heading {
@@ -71,241 +69,6 @@ body {
     mix-blend-mode: screen;
 }
 
-/* all blobs screen media queries  */
-@media screen and (min-width: 1260px) {
-    #head {
-        font-size: 100px;
-    }
-}
-
-@media screen and (max-width: 1260px) {
-    #head {
-        font-size: 100px;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .container {
-        height: 143px;
-    }
-
-    #head {
-        font-size: 90px;
-    }
-
-    .blobs_2 {
-        top: 65px !important;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .container {
-        height: 130px;
-    }
-
-    #head {
-        font-size: 80px;
-    }
-
-    .blobs_2 {
-        top: 50px !important;
-    }
-
-    .blobs_4 {
-        top: 61px !important;
-    }
-
-    .blobs_6 {
-        top: 64px !important;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    #head {
-        font-size: 60px;
-    }
-
-    .blobs_1 {
-        left: 60px !important;
-    }
-
-    .blobs_2 {
-        left: 145px !important;
-        top: 63px !important;
-    }
-
-    .blobs_4 {
-        display: none;
-    }
-
-    .blobs_6 {
-        display: none;
-    }
-
-    .blobs_5 {
-        display: none;
-    }
-
-    .blobs_3 {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .container {
-        height: 100px;
-    }
-
-    #head {
-        font-size: 45px;
-    }
-
-    .blobs_2 {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    #head {
-        font-size: 40px;
-    }
-
-    .blobs_7 {
-        left: 211px !important;
-    }
-
-    .maindiv {
-        margin-top: -100px !important;
-    }
-
-    .container {
-        top: 8%;
-    }
-}
-
-@media screen and (max-width: 365px) {
-    #head {
-        font-size: 30px;
-    }
-
-    .blobs_7 {
-        display: none;
-    }
-}
-
-/* end here  */
-
-.blobbox {
-    position: absolute;
-}
-
-[class*="blobs"] {
-    mix-blend-mode: color;
-    animation: blobs 15s ease-in-out infinite alternate
-}
-
-.blobs_1 {
-    background: #5a4f55;
-    width: 60px;
-    height: 60px;
-    top: 24px;
-    left: 15%;
-}
-
-.blobs_2 {
-    background: #ff4500;
-    width: 77px;
-    height: 66px;
-    top: 91px;
-    left: 25%;
-}
-
-.blobs_3 {
-    background: #00ff00;
-    width: 60px;
-    height: 75px;
-    top: 15px;
-    left: 37%;
-}
-
-.blobs_4 {
-    background: #ff0000;
-    width: 80px;
-    height: 65px;
-    top: 76px;
-    left: 46%;
-}
-
-.blobs_5 {
-    background: #ffff00;
-    width: 64px;
-    height: 47px;
-    top: 38px;
-    left: 56%;
-}
-
-.blobs_6 {
-    background: #00ffff;
-    width: 45px;
-    height: 55px;
-    top: 82px;
-    left: 69%;
-}
-
-.blobs_7 {
-    background: #ff8c00;
-    width: 80px;
-    height: 80px;
-    top: 15px;
-    left: 76%;
-}
-
-@keyframes blobs {
-    0% {
-        border-radius: 26% 74% 61% 39% / 54% 67% 33% 46%
-    }
-
-    10% {
-        border-radius: 74% 26% 47% 53% / 68% 46% 54% 32%
-    }
-
-    20% {
-        border-radius: 48% 52% 30% 70% / 27% 37% 63% 73%
-    }
-
-    30% {
-        border-radius: 73% 27% 57% 43% / 28% 67% 33% 72%
-    }
-
-    40% {
-        border-radius: 63% 37% 56% 44% / 25% 28% 72% 75%
-    }
-
-    50% {
-        border-radius: 39% 61% 70% 30% / 61% 29% 71% 39%
-    }
-
-    60% {
-        border-radius: 27% 73% 29% 71% / 73% 51% 49% 27%
-    }
-
-    70% {
-        border-radius: 39% 61% 65% 35% / 74% 65% 35% 26%
-    }
-
-    80% {
-        border-radius: 55% 45% 37% 63% / 38% 30% 70% 62%
-    }
-
-    90% {
-        border-radius: 25% 75% 70% 30% / 39% 50% 50% 61%
-    }
-
-    100% {
-        border-radius: 66% 34% 33% 67% / 65% 73% 27% 35%
-    }
-}
-
 /* placeholder for last result input box  */
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -338,16 +101,9 @@ body {
 .maindiv {
     height: 560px;
     width: 364px;
-    min-width: 290px;
     padding: 10px;
-    margin-top: 230px;
     border-radius: 16px;
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: rgb(0 0 0 / 30%) 0px 19px 38px, rgb(0 0 0 / 22%) 0px 15px 12px;
+    background: rgba(255, 255, 255);
 }
 
 .previous_result {
@@ -365,7 +121,7 @@ body {
 }
 
 form {
-    width: 320px;
+    width: 100%;
     margin: 28px auto;
 }
 
@@ -375,11 +131,11 @@ form {
 
 input {
     background: none;
-    color: white;
+    color: black;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 320px;
+    width: 100%;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid #c6c6c6;
@@ -388,35 +144,6 @@ input {
 input:focus {
     outline: none;
 }
-
-label {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: normal;
-    position: absolute;
-    pointer-events: none;
-    left: -5px;
-    top: 10px;
-    transition: 300ms ease all;
-}
-
-.bar {
-    position: relative;
-    display: block;
-    width: 320px;
-}
-
-.bar:before {
-    content: '';
-    height: 2px;
-    width: 0;
-    bottom: 0px;
-    position: absolute;
-    background: #2196f3;
-    transition: 300ms ease all;
-    left: 0%;
-}
-
 
 .container2 {
     display: grid;
@@ -527,22 +254,13 @@ label {
     background: #e95ee2 !important;
 }
 
-/* github profile at right down corner */
-.me {
-    background: url(https://github.githubassets.com/images/modules/logos_page/Octocat.png) no-repeat center/contain;
+.git-down{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.me2{
     width: 40px;
-    height: 40px;
-    left: 16px;
-    bottom: 16px;
-    display: block;
-    position: fixed;
-    z-index: 9999;
-    border-radius: 50%;
-    -webkit-transform: translateY(-4px);
-    -ms-transform: translateY(-4px);
-    transform: translateY(-4px);
-    -webkit-animation: me 2s linear infinite alternate both;
-    animation: me 2s linear infinite alternate both;
 }
 
 .unselectable {

@@ -1,0 +1,123 @@
+/* MOBILE DEVICES  */
+@media (min-width: 320px) and (max-width: 480px) {
+    .container {
+        display: none;
+    }
+
+    .maindiv {
+        margin-top: 0px;
+        height: 574px;
+        width: 95%;
+    }
+
+    body {
+        height: 100vh;
+        justify-content: flex-start;
+        margin-top: 2%;
+    }
+
+    #head {
+        font-size: 30px;
+        font-size: 40px;
+    }
+
+    .container2 {
+        gap: 8px 5px;
+    }
+
+    .git-down {
+        width: 100%;
+    }
+
+    .git-down a {
+        display: inline-block;
+        border-radius: 5px;
+        padding-top: 5px;
+        background: white;
+    }
+}
+
+/* TABLET DEVICES  */
+@media (min-width: 380px) {
+    .maindiv {
+        width: 365px;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .git-down {
+        width: 100%;
+        display: flex;
+    }
+
+    .git-down a {
+        display: inline-block;
+        border-radius: 5px;
+        padding-top: 5px;
+        background: white;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .container {
+        display: none;
+    }
+}
+
+
+@media (min-width: 901px){
+    #head {
+        font-size: 100px;
+    }
+}
+
+
+
+
+/* extra responsive */
+
+@media screen and (max-width: 900px) {
+    .container {
+        height: 143px;
+    }
+
+    #head {
+        font-size: 90px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        height: 130px;
+    }
+
+    #head {
+        font-size: 80px;
+    }
+}
+
+/* now for responsive for height */
+@media (max-height: 614px) {
+    .git-down {
+        display: none;
+    }
+    .maindiv {
+        height: 549px;
+        margin-top: 9px;
+    }
+    body {
+        margin-top: 0;
+    }
+    .container2 {
+        gap: 0px 5px;
+    }
+}
+
+@media (max-height: 600px){
+    .container{
+        display: none;
+    }
+    .maindiv{
+        min-height: 530px;
+    }
+}
