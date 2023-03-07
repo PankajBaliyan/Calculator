@@ -1,5 +1,4 @@
 //declare variables
-// const changeImageButton = document.querySelector("#change-image");
 const backSpaceImage = document.querySelector("#backSpacePNG");
 const startCalcButton = document.querySelector("#start-calc");
 const startButton = document.querySelector("#starton");
@@ -17,23 +16,6 @@ window.onload = () => {
 };
 
 //To change backSpace button on calculator START
-// changeImageButton.addEventListener("mouseenter", onMouseEnter);
-// changeImageButton.addEventListener("click", onMouseEnter);
-// changeImageButton.addEventListener("mouseleave", onMouseLeave);
-// changeImageButton.addEventListener("click", onMouseLeave);
-// function onMouseEnter() {
-//     backSpaceImage.src = `images/backspaceWhite.png`;
-// }
-
-// function onMouseLeave() {
-//     backSpaceImage.src = `images/backspace.png`;
-// }
-
-// const backSpaceImage = document.querySelector("#backspace-image");
-// const calculatorButtons = document.querySelector("#calculator-buttons");
-
-// const backSpaceImage = document.querySelector("#backSpacePNG");
-
 backSpaceImage.addEventListener("mouseenter", toggleImageSource);
 backSpaceImage.addEventListener("mouseleave", toggleImageSource);
 
@@ -50,10 +32,6 @@ function toggleImageSource() {
         backSpaceImage.src = newSrc;
     }
 }
-
-
-
-
 
 // Function to start/stop calculator
 startCalcButton.addEventListener("click", startCalc);
