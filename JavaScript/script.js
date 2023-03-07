@@ -127,7 +127,7 @@ function enterNumber(inputNumber, currentData) {
     let lastDigit = currentData.charAt(currentData.length - 1);
     if (previousData == 0) {
         //if there is previously nothing in input box this will run
-        if (inputNumber == "backSpace" || inputNumber == "=" || inputNumber == "clear") {
+        if (inputNumber == "backSpace" || inputNumber == "=" || inputNumber == "clear" || inputNumber == "*" || inputNumber == "/") {
             outputResult.value = 0;
         } else {
             outputResult.value = inputNumber;
