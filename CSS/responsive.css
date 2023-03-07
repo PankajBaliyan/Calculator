@@ -65,7 +65,7 @@
 }
 
 
-@media (min-width: 901px){
+@media (min-width: 901px) {
     #head {
         font-size: 100px;
     }
@@ -101,23 +101,34 @@
     .git-down {
         display: none;
     }
+
     .maindiv {
         height: 549px;
         margin-top: 9px;
     }
+
     body {
         margin-top: 0;
     }
+
     .container2 {
         gap: 0px 5px;
     }
 }
 
-@media (max-height: 600px){
-    .container{
+@media (max-height: 600px) {
+    .container {
         display: none;
     }
-    .maindiv{
+
+    .maindiv {
         min-height: 530px;
+    }
+}
+
+/* hide the tooltip on smaller devices */
+@media only screen and (max-width: 600px) {
+    .tooltip {
+        display: none;
     }
 }
