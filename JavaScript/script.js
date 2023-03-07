@@ -1,5 +1,5 @@
 //declare variables
-const changeImageButton = document.querySelector("#change-image");
+// const changeImageButton = document.querySelector("#change-image");
 const backSpaceImage = document.querySelector("#backSpacePNG");
 const startCalcButton = document.querySelector("#start-calc");
 const startButton = document.querySelector("#starton");
@@ -17,15 +17,43 @@ window.onload = () => {
 };
 
 //To change backSpace button on calculator START
-changeImageButton.addEventListener("mouseenter", onMouseEnter);
-changeImageButton.addEventListener("mouseleave", onMouseLeave);
-function onMouseEnter() {
-    backSpaceImage.src = `images/backspaceWhite.png`;
+// changeImageButton.addEventListener("mouseenter", onMouseEnter);
+// changeImageButton.addEventListener("click", onMouseEnter);
+// changeImageButton.addEventListener("mouseleave", onMouseLeave);
+// changeImageButton.addEventListener("click", onMouseLeave);
+// function onMouseEnter() {
+//     backSpaceImage.src = `images/backspaceWhite.png`;
+// }
+
+// function onMouseLeave() {
+//     backSpaceImage.src = `images/backspace.png`;
+// }
+
+// const backSpaceImage = document.querySelector("#backspace-image");
+// const calculatorButtons = document.querySelector("#calculator-buttons");
+
+// const backSpaceImage = document.querySelector("#backSpacePNG");
+
+backSpaceImage.addEventListener("mouseenter", toggleImageSource);
+backSpaceImage.addEventListener("mouseleave", toggleImageSource);
+
+function toggleImageSource() {
+    let currentSrc = backSpaceImage.src;
+    let backspace = currentSrc.includes("backspace.png");
+    let backspaceWhite = currentSrc.includes("backspaceWhite.png");
+
+    if (backspace) {
+        let newSrc = currentSrc.replace("backspace.png", "backspaceWhite.png");
+        backSpaceImage.src = newSrc;
+    } else if (backspaceWhite) {
+        let newSrc = currentSrc.replace("backspaceWhite.png", "backspace.png");
+        backSpaceImage.src = newSrc;
+    }
 }
 
-function onMouseLeave() {
-    backSpaceImage.src = `images/backspace.png`;
-}
+
+
+
 
 // Function to start/stop calculator
 startCalcButton.addEventListener("click", startCalc);
@@ -229,8 +257,8 @@ const keyToNotification = {
 };
 
 document.addEventListener("keydown", function (e) {
-    console.log("key", e.key)
-    console.log("keyCode", e.keyCode)
+    // console.log("key", e.key)
+    // console.log("keyCode", e.keyCode)
     if (calculatorStatus == 1) {
 
     if(event.keyCode != 106 && event.keyCode != 107 && event.keyCode != 109){
