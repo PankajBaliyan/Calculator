@@ -1,13 +1,9 @@
 //declare variables
 const backSpaceImage = document.querySelector("#backSpacePNG");
-const startCalcButton = document.querySelector("#start-calc");
-const startButton = document.querySelector("#starton");
-const startonTooltip = document.querySelector("#startonTooltip");
 const outputResult = document.querySelector("#outputResult");
 
 let result = document.getElementById("result"); //last result data show here
 let resultStatus = 0;
-let calculatorStatus = 0;
 
 //To change backSpace button on calculator START
 backSpaceImage.addEventListener("mouseenter", toggleImageSource);
@@ -25,24 +21,6 @@ function toggleImageSource() {
         let newSrc = currentSrc.replace("backspaceWhite.png", "backspace.png");
         backSpaceImage.src = newSrc;
     }
-}
-
-// Function to start/stop calculator
-startCalcButton.addEventListener("click", startCalc);
-document.addEventListener("keydown", (event) => {
-    // keyCode 79 is equal to "Enter" key
-    // it will on/off from same "enter" key
-    if (event.keyCode === 79) {
-        startCalc();
-    }
-});
-
-function startCalc() {
-    const isOn = startButton.innerHTML === "ON";
-    startButton.innerHTML = isOn ? "OFF" : "ON";
-    startonTooltip.innerHTML = isOn ? "Off" : "On";
-    outputResult.value = isOn ? 0 : "";
-    calculatorStatus = isOn ? 1 : 0;
 }
 
 // function to set data in getKeys function
@@ -201,8 +179,6 @@ const checkPressedKey = {
 document.addEventListener("keydown", function (e) {
     // console.log("key", e.key)
     // console.log("keyCode", e.keyCode)
-    if (calculatorStatus == 1) {
-
     if(event.keyCode != 106 && event.keyCode != 107 && event.keyCode != 109){
 
         if (event.key === "+" || event.key === "=") {
@@ -234,4 +210,4 @@ document.addEventListener("keydown", function (e) {
             getKeys(...keyArgs);
         }
     }
-});
+);
