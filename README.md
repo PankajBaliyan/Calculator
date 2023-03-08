@@ -25,7 +25,6 @@ In this webpage, you can perform any type of calculation using our web-based cal
   - Calculators can be accessed with both the keyboard and buttons.
   - Keeping track of previous results is easy.
   - Any type of calculation can be performed.
-  - Snackbar Notifications will be triggered by any keyPress.
   - With a beautiful and pleasant user interface, it is compatible with all mobile and desktop devices.
 
 
