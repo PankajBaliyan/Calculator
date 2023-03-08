@@ -31,18 +31,12 @@
             <form>
                 <div class="group">
                     <span>Calculations 👇</span>
-                    <input type="text" id="outputResult" disabled>
+                    <input type="text" id="outputResult" value="0" disabled>
                 </div>
                 <button name="button" aria-label="submit" type="submit" style="display: none;"></button>
             </form>
         </div>
         <div class="container2">
-            <ul class="wrapper">
-                <li class="icon buttton__icon startbgcolor" id="start-calc">
-                    <span class="tooltip unselectable" id="startonTooltip">On</span>
-                    <span id="starton" class="unselectable">ON</span>
-                </li>
-            </ul>
             <ul id="start" class="wrapper">
                 <li class="icon buttton__icon startbgcolor" onclick="getKeys('clear')">
                     <span class="tooltip unselectable">Start</span>
@@ -57,6 +51,12 @@
                     <span class="backImg unselectable" id="change-img">
                         <img src="./Images/backspace.png" id="backSpacePNG" alt="backspace" width="30" height="33">
                     </span>
+                </li>
+            </ul>
+            <ul class="wrapper">
+                <li class="icon buttton__icon equalbgcolor" onclick="getKeys('=')">
+                    <span class="tooltip unselectable">Equals</span>
+                    <span class="unselectable">=</span>
                 </li>
             </ul>
             <ul class="wrapper">
@@ -154,12 +154,6 @@
                 <li class="icon buttton__icon symbolbgcolor" onclick="getKeys('%')">
                     <span class="tooltip unselectable">Percentage</span>
                     <span class="unselectable">%</span>
-                </li>
-            </ul>
-            <ul class="wrapper">
-                <li class="icon buttton__icon equalbgcolor" onclick="getKeys('=')">
-                    <span class="tooltip unselectable">Equals</span>
-                    <span class="unselectable">=</span>
                 </li>
             </ul>
         </div>
