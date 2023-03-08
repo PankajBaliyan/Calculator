@@ -8,12 +8,6 @@ const outputResult = document.querySelector("#outputResult");
 let result = document.getElementById("result"); //last result data show here
 let resultStatus = 0;
 let calculatorStatus = 0;
-let notificationPosition;
-
-// function to show notification on file loads
-window.onload = () => {
-    showNotification("Welcome to Calculator", "success", "check");
-};
 
 //To change backSpace button on calculator START
 backSpaceImage.addEventListener("mouseenter", toggleImageSource);
@@ -48,26 +42,11 @@ function startCalc() {
     startButton.innerHTML = isOn ? "OFF" : "ON";
     startonTooltip.innerHTML = isOn ? "Off" : "On";
     outputResult.value = isOn ? 0 : "";
-    showNotification(`Now Calculator is ${isOn ? "ON" : "OFF"}`, isOn ? "success" : "danger");
     calculatorStatus = isOn ? 1 : 0;
 }
 
-// function to set notification position according to screen size
-// right bottom for laptop devices
-// left top for mobile devices
-function setNotificationPosition() {
-    const windowInnerWidth = window.innerWidth;
-    notificationPosition = windowInnerWidth < 954 ? "tr" : "br";
-}
-
-// function to set data in notification function
-function notification(msgHere, notificationStatus, notificationIcon, inputNumber) {
-    if (startButton.innerHTML === "ON") {
-        showNotification("Turn On your Calc", "red", "question");
-        return;
-    }
-
-    showNotification(msgHere, notificationStatus, notificationIcon);
+// function to set data in getKeys function
+function getKeys(inputNumber) {
 
     if (resultStatus === 1) {
         outputResult.value = 0;
@@ -91,21 +70,6 @@ function notification(msgHere, notificationStatus, notificationIcon, inputNumber
     }
 
     enterNumber(inputNumber, outputResult.value);
-}
-
-
-
-// toast Notification here
-function showNotification(msg, status, icon) {
-    setNotificationPosition();
-    SnackBar({
-        timeout: 1000, // ms
-        position: notificationPosition,
-        message: msg,
-        speed: "0.2s",
-        status: status,
-        icon: icon,
-    });
 }
 
 // function that manage data inside inputBox of calculator & based on key pressed & input key
@@ -187,51 +151,51 @@ function calculation(inputData) {
     resultStatus = 1;
 }
 
-// get notification according to keypress
-const keyToNotification = {
-    96: ["Zero", "None", "#", 0],
-    48: ["Zero", "None", "#", 0],
+// return number according to keypress
+const checkPressedKey = {
+    96: [0],
+    48: [0],
 
-    97: ["One", "None", "#", 1],
-    49: ["One", "None", "#", 1],
+    97: [1],
+    49: [1],
 
-    98: ["Two", "None", "#", 2],
-    50: ["Two", "None", "#", 2],
+    98: [2],
+    50: [2],
 
-    99: ["Three", "None", "#", 3],
-    51: ["Three", "None", "#", 3],
+    99: [3],
+    51: [3],
 
-    100: ["Four", "None", "#", 4],
-    52: ["Four", "None", "#", 4],
+    100: [4],
+    52: [4],
 
-    102: ["Six", "None", "#", 6],
-    54: ["Six", "None", "#", 6],
+    102: [6],
+    54: [6],
 
-    103: ["Seven", "None", "#", 7],
-    55: ["Seven", "None", "#", 7],
+    103: [7],
+    55: [7],
 
-    105: ["Nine", "None", "#", 9],
-    57: ["Nine", "None", "#", 9],
+    105: [9],
+    57: [9],
 
-    107: ["Plus", "None", "#", "+"],
+    107: ["+"],
 
-    109: ["Minus", "None", "#", "-"],
-    189: ["Minus", "None", "#", "-"],
+    109: ["-"],
+    189: ["-"],
 
-    106: ["Multiply", "None", "#", "*"],
+    106: ["*"],
 
-    111: ["Divide", "None", "#", "/"],
-    191: ["Divide", "None", "#", "/"],
+    111: ["/"],
+    191: ["/"],
 
-    110: ["Dot", "None", "#", "."],
-    190: ["Dot", "None", "#", "."],
+    110: ["."],
+    190: ["."],
 
-    13: ["=", "warning", "#", "="],
+    13: ["="],
 
-    8: ["Backspace", "warning", "B", "backSpace"],
+    8: ["backSpace"],
 
     // also used for delete
-    12: ["Clear", "info", "X", "clear"]
+    12: ["clear"]
 };
 
 document.addEventListener("keydown", function (e) {
@@ -243,35 +207,31 @@ document.addEventListener("keydown", function (e) {
 
         if (event.key === "+" || event.key === "=") {
             if (event.shiftKey) {
-                notification("Plus", "None", "#", "+");
+                getKeys("+");
             } else {
-                notification("=", "warning", "#", "=");
+                getKeys("=");
             }
         }
         if (event.key === "*" || event.key === "8") {
             if (event.shiftKey) {
-                notification("Multiply", "None", "#", "*");
+                getKeys("*");
             } else {
-                notification("Eight", "None", "#", "8");
+                getKeys("8");
             }
         }
         if (event.key === "%" || event.key === "5") {
             if (event.shiftKey) {
-                notification("Percentage", "None", "#", "%");
+                getKeys("%");
             } else {
-                notification("Five", "None", "#", "5");
+                getKeys("5");
             }
         }
     }
 
 
-        const notificationArgs = keyToNotification[e.keyCode]; // it will get key combinations & make a object
-        if (notificationArgs) {
-            notification(...notificationArgs);
-        } else {
-            showNotification("Invalid Key Pressed", "red", "question");
+        const keyArgs = checkPressedKey[e.keyCode]; // it will get key combinations & make a object
+        if (keyArgs) {
+            getKeys(...keyArgs);
         }
-    } else {
-        showNotification("Turn On your Calc", "red", "question");
     }
 });
