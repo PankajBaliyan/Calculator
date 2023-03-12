@@ -1,6 +1,6 @@
 # Calculator
 
-In this webpage, you can perform any type of calculation using our web-based calculator, and we guarantee that you will be satisfied with the results.
+This is a simple calculator project that performs all basic arithmetic calculations including addition, subtraction, multiplication, and division. The project is written in JavaScript programming language.
 
 <hr>
 
@@ -35,6 +35,7 @@ In this webpage, you can perform any type of calculation using our web-based cal
 
 ## Contributing
 
+This project is open for contributions. If you would like to contribute to this project, you can fork the repository and submit a pull request.<br>
 Contributions are always welcome!
 
 See `index.html` for ways to get started.
@@ -56,13 +57,13 @@ If you have any feedback, please reach out to us at pankajbaliyan90@gmail.com
 
 ## 🔗 Links
 
-<div style="display:flex; justify-content: space-between">
 
-[<img src="https://www.edigitalagency.com.au/wp-content/uploads/linkedin-logo-gif-funny-man-suitcase.gif" width="150" style="background-color:white;padding:5px;border-radius:5px">](https://www.linkedin.com/in/pankaj-kumar-90/)
+[<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinkedIn_Logo.svg/2560px-LinkedIn_Logo.svg.png" width="150" style="background-color:white;padding:5px;border-radius:5px">](https://www.linkedin.com/in/pankaj-kumar-90/)
 
-[<img src="https://static.wixstatic.com/media/b83005_809e60f5dae943ddb60598d5d8343100~mv2.gif" width="150" style="background-color:white;padding:5px;border-radius:5px">](https://codewithpankaj.vercel.app)
+<br>
 
-</div>
+[<img src="https://www.seekpng.com/png/detail/111-1112824_picture-my-portfolio-logo-png.png" width="150" style="background-color:white;padding:5px;border-radius:5px">](https://codewithpankaj.vercel.app)
+
 
 ## Lessons Learned
 
@@ -78,7 +79,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd Calculator
 ```
 
 Start code editor
