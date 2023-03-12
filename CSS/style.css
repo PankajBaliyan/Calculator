@@ -231,9 +231,9 @@ input:focus {
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper .buttton__icon:hover,
-.wrapper .buttton__icon:hover .tooltip,
-.wrapper .buttton__icon:hover .tooltip::before {
+.wrapper .button__icon:hover,
+.wrapper .button__icon:hover .tooltip,
+.wrapper .button__icon:hover .tooltip::before {
     background: #1877F2 !important;
     color: #ffffff;
 }
@@ -254,16 +254,17 @@ input:focus {
     background: #e95ee2 !important;
 }
 
-.git-down{
+.git-down {
     position: absolute;
     bottom: 0;
     left: 0;
 }
-.me2{
+
+.me2 {
     width: 40px;
 }
 
-.unselectable {
+.un-selectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;

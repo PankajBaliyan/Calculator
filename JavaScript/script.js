@@ -102,6 +102,7 @@ function enterNumber(inputNumber, currentData) {
 function calculation(inputData) {
     let currentData = outputResult.value.toString();
     let str = inputData.slice(0, -1); //remove last digit(=) from outputResult.value
+    let setData; // variable to store calculation result, used below
 
     // remove any trailing operators
     switch (str.charAt(str.length - 1)) {
@@ -120,7 +121,7 @@ function calculation(inputData) {
         outputResult.value = 0;
     } else {
         // evaluate the expression
-        let setData = Function('"use strict";return (' + str + ')')();
+        setData = Function('"use strict";return (' + str + ')')();
         setData = parseFloat(setData.toFixed(2));
 
         outputResult.value = setData;

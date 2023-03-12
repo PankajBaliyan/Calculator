@@ -45,10 +45,6 @@
 }
 
 @media screen and (min-width: 481px) {
-    .git-down {
-        width: 100%;
-        display: flex;
-    }
 
     .git-down a {
         display: inline-block;
@@ -61,6 +57,13 @@
 @media (min-width: 481px) and (max-width: 768px) {
     .container {
         display: none;
+    }
+}
+
+@media (min-width: 768px) {
+    .git-down a {
+        margin-left: 10px;
+        margin-bottom: 10px;
     }
 }
 
